@@ -1,0 +1,5 @@
+* Todo
+** main.py:
+*** TODO create structure for nested notes
+*** TODO create structure for todo
+*** BLOCKED create saving system
