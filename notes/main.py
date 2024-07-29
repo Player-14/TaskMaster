@@ -31,9 +31,10 @@ class note(book):
 
 # todo model class
 class todo(book):
-    def __init__(self, book_name, book_timestamp, title, timestamp, scheduled, deadline, data):
+    def __init__(self, book_name, book_timestamp, title, state, timestamp, scheduled, deadline, data):
         super().__init__(book_name, book_timestamp)
         self.title = title
+        self.state = state
         self.timestamp = timestamp
         self.scheduled = scheduled
         self.deadline = deadline
@@ -41,6 +42,6 @@ class todo(book):
 
     # class to return JSON of todo data
     def printJSON(self):
-        construct = {"todo": {"title": self.title, "timestamp": self.timestamp, "scheduled": self.scheduled, "deadline": self.deadline, "data": self.data}}
+        construct = {"todo": {"title": self.title, "state": self.state, "timestamp": self.timestamp, "scheduled": self.scheduled, "deadline": self.deadline, "data": self.data}}
         construct = json.dumps(construct)
         return construct
