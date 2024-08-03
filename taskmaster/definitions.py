@@ -17,7 +17,7 @@ class book:
 
 # note model class
 class note(book):
-    def __init__(self, book_name, book_timestamp, title, timestamp, data):
+    def __init__(self, book_name, book_timestamp, title, timestamp, priority, data):
         super().__init__(book_name, book_timestamp)
         self.title = title
         self.timestamp = timestamp
@@ -31,7 +31,7 @@ class note(book):
 
 # todo model class
 class todo(book):
-    def __init__(self, book_name, book_timestamp, title, state, timestamp, scheduled, deadline, data):
+    def __init__(self, book_name, book_timestamp, title, state, timestamp, priority, scheduled, deadline, data):
         super().__init__(book_name, book_timestamp)
         self.title = title
         self.state = state

@@ -31,14 +31,14 @@ class Cursor():
 		self.db.append(book(book_name, str(datetime.datetime.now())))
 		self.cur_book = book_name
 
-	def create_note(self, title, timestamp, data = None):
+	def create_note(self, title, timestamp, priority = "B" data = None):
 		book_ = self.db[self.db.index(self.cur_book)]
 
 		book_.append(note(self.cur_book.name, self.cur_book.timestamp, title, timestamp, data))
 
-	def create_todo(self, title, state = 'todo', timestamp = datetime.datetime.now(), scheduled = None, deadline = None,  data = None):
+	def create_todo(self, title, state = 'todo', timestamp = datetime.datetime.now(), priority = "B" scheduled = None, deadline = None,  data = None):
 		book_ = self.db[self.db.index(self.cur_book)]
 		
-		book_.append(note(self.cur_book.name, self.cur_book.timestamp, title, timestamp, data))
+		book_.append(todo(self.cur_book.name, self.cur_book.timestamp, title, state, timestamp, priority, scheduled, deadline, data))
 
 Cursor("yo")
