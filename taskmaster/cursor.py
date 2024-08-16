@@ -1,4 +1,4 @@
-from definitions import *
+from definitions import book, note, todo
 from operator import attrgetter
 import datetime
 import json
@@ -83,7 +83,7 @@ class Cursor():
 					
 					for bk in self.db:
 						if bk.name == self.cur_book:
-							for obj in bk.obj:
+							for obj in bk.objects:
 								if obj.type == "todo":
 									print("="*50)
 									print("Title:\t" + obj.title)
@@ -111,6 +111,8 @@ class Cursor():
 										print("Scheduled time:\t" + obj.scheduled)
 										print("Deadline:\t" + obj.deadline)
 										print("Description:\t" + obj.data)
+				
+				# if no option is selected, go to main screen
 				else:
 					self.cur_book = ""	
 			else:
